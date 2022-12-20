@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="">Nombre del gato</label>
+        <input type="text" id="id1">
+        <button type="button" id="boton">agregar gato</button>
+    </form>
+
+    <script>
+       /* var bEnviar = document.getElementById("boton")
+        bEnviar.addEventListener("click", function () {
+            let id_ = document.getElementById("id1").value
+            let nombre_ = document.getElementById("id2").value
+            let password_ = document.getElementById("id3").value
+            console.log(id_ + " " + nombre_ + " " + password_)
+                axios.post("http://localhost", {
+                    id: id_,
+                nombre: nombre_,
+                password: password_
+            })
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        })
+*/
+        var bImprimir = document.getElementById("boton")
+        bImprimir.addEventListener("click", function(){
+            let nombre_= document.getElementById("id1").value
+            axios.post('https://despliegueextra-production.up.railway.app/agregargato',{
+                nombre: nombre_
+            })
+            .then(function (response) {
+                    console.log(response);
+                })
+            .catch(function(error){
+                console.log("error en el axios")
+                console.log(error)
+            })
+        })
+    </script>
+
+
+</body>
+</html>
